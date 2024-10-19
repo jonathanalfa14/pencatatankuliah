@@ -1,13 +1,21 @@
 * {
-  margin: 0;
-  padding: 0;
   box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0; /* Menghapus margin default */
+  padding: 0; /* Menghapus padding default */
+  height: 100%; /* Memastikan html dan body memiliki tinggi 100% */
 }
 
 body {
   font-family: Arial, sans-serif;
   background-color: #f4f4f4;
   color: #333;
+  display: flex;
+  flex-direction: column; /* Mengatur layout menjadi kolom */
+  min-height: 100vh; /* Memastikan body memiliki tinggi minimal 100vh */
 }
 
 header {
@@ -61,6 +69,7 @@ header {
   padding: 20px;
   background-color: white;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  flex: 1; /* Memastikan container mengisi ruang yang tersisa */
 }
 
 h2 {
@@ -159,13 +168,11 @@ ul li input[type="checkbox"] {
 
 /* Gaya untuk Footer */
 footer {
-  background-color: #06276e;
-  color: white;
-  text-align: center;
-  padding: 20px 0;
-  position: relative;
-  bottom: 0;
-  width: 100%;
+  background-color: #06276e; /* Warna latar belakang footer */
+  color: white; /* Warna teks footer */
+  text-align: center; /* Mengatur teks di tengah */
+  padding: 20px 0; /* Memberikan jarak atas dan bawah */
+  width: 100%; /* Memastikan footer penuh lebar */
 }
 
 .footer-content {
