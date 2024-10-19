@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pencatat Tugas Kuliah</title>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/boxicons@latest/css/boxicons.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <div class="header-content">
+        <a href="https://sim.unipma.ac.id/gate/menu#akad" target="_blank">
+          <img src="assets/img/Unipma.png" alt="Logo" class="logo" />
+        </a>
+        <h1 class="logo-name">Tugas Kuliah UNIPMA</h1>
+        <div class="menu-icon" id="menu-icon">
+          <i class="bx bx-menu"></i>
+        </div>
+        <nav class="navbar" id="navbar">
+          <a href="https://www.instagram.com/grace_j15/" target="_blank"
+            >Instagram</a
+          >
+          <a href="https://github.com/jonathanalfa14" target="_blank">GitHub</a>
+          <a
+            href="http://www.linkedin.com/in/jonathan-alfa-grace-juliantio-b8693b2a1"
+            target="_blank"
+            >LinkedIn</a
+          >
+        </nav>
+      </div>
+    </header>
+
+    <div class="container">
+      <h2>Pencatat Tugas Kuliah</h2>
+      <form id="task-form">
+        <div class="form-group">
+          <label for="subject">Nama Mata Kuliah</label>
+          <input
+            type="text"
+            id="subject"
+            placeholder="Masukkan nama mata kuliah"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="task">Tugas</label>
+          <input
+            type="text"
+            id="task"
+            placeholder="Masukkan deskripsi tugas"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="due-date">Tanggal Pengumpulan</label>
+          <input type="date" id="due-date" required />
+        </div>
+        <div class="form-group">
+          <label>Status Tugas</label>
+          <select id="status">
+            <option value="selesai">Selesai</option>
+            <option value="belum-selesai">Belum Selesai</option>
+          </select>
+        </div>
+        <button type="submit">Tambah Tugas</button>
+      </form>
+
+      <h2>Daftar Tugas</h2>
+      <ul id="task-list"></ul>
+    </div>
+
+    <footer>
+      <div class="footer-content">
+        <p>Created by Jonathan Alfa | 2024</p>
+        <div class="footer-icons">
+          <a href="https://www.instagram.com/grace_j15/" target="_blank"
+            ><i class="bx bxl-instagram"></i
+          ></a>
+          <a href="https://github.com/jonathanalfa14" target="_blank"
+            ><i class="bx bxl-github"></i
+          ></a>
+          <a
+            href="http://www.linkedin.com/in/jonathan-alfa-grace-juliantio-b8693b2a1"
+            target="_blank"
+            ><i class="bx bxl-linkedin"></i
+          ></a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
