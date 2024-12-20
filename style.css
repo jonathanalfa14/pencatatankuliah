@@ -2,20 +2,11 @@
   box-sizing: border-box;
 }
 
-html,
 body {
-  margin: 0; /* Menghapus margin default */
-  padding: 0; /* Menghapus padding default */
-  height: 100%; /* Memastikan html dan body memiliki tinggi 100% */
-}
-
-body {
-  font-family: Arial, sans-serif;
-  background-color: #f4f4f4;
-  color: #333;
   display: flex;
-  flex-direction: column; /* Mengatur layout menjadi kolom */
-  min-height: 100vh; /* Memastikan body memiliki tinggi minimal 100vh */
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0;
 }
 
 header {
@@ -64,12 +55,7 @@ header {
 }
 
 .container {
-  max-width: 800px;
-  margin: 20px auto;
-  padding: 20px;
-  background-color: white;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  flex: 1; /* Memastikan container mengisi ruang yang tersisa */
+  flex: 1; /* Mengisi ruang antara header dan footer */
 }
 
 h2 {
@@ -166,13 +152,66 @@ ul li input[type="checkbox"] {
   margin-right: 10px;
 }
 
+.form-table-wrapper {
+  display: flex;
+  gap: 20px;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+#task-form {
+  width: 40%;
+}
+
+#task-table {
+  width: 55%;
+}
+
+/* Atur gaya header dan sel tabel */
+#task-table th,
+#task-table td {
+  padding: 8px; /* Beri jarak di dalam sel */
+  border: 1px solid #ddd; /* Tambahkan garis pembatas */
+  text-align: left; /* Teks rata kiri */
+}
+
+/* Warna latar belakang untuk header */
+#task-table th {
+  background-color: #f4f4f4; /* Warna header */
+  font-weight: bold; /* Teks tebal */
+}
+
+#task-table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+#task-table tr:hover {
+  background-color: #f1f1f1;
+}
+
+.delete-btn {
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.delete-btn:hover {
+  opacity: 0.8;
+}
+
+.table-container {
+  overflow-x: auto; /* Tambahkan scroll horizontal jika konten tabel terlalu besar */
+  margin-bottom: 20px; /* Beri jarak dengan footer */
+}
+
 /* Gaya untuk Footer */
+/* Footer selalu berada di bawah layar */
 footer {
   background-color: #06276e; /* Warna latar belakang footer */
-  color: white; /* Warna teks footer */
-  text-align: center; /* Mengatur teks di tengah */
-  padding: 20px 0; /* Memberikan jarak atas dan bawah */
-  width: 100%; /* Memastikan footer penuh lebar */
+  color: white; /* Warna teks */
+  text-align: center; /* Teks rata tengah */
+  padding: 20px 0; /* Jarak atas dan bawah */
+  width: 100%; /* Lebar penuh */
 }
 
 .footer-content {
@@ -250,6 +289,19 @@ footer {
 
   .navbar a:hover {
     color: #ccc;
+  }
+}
+
+/* Media query untuk responsivitas */
+@media (max-width: 768px) {
+  .form-table-wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #task-form,
+  #task-table {
+    width: 100%; /* Tambahkan titik koma */
   }
 }
 

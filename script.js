@@ -25,21 +25,24 @@ document.getElementById("task-form").addEventListener("submit", function (e) {
 // Fungsi untuk menampilkan tugas
 function displayTasks() {
   const taskList = JSON.parse(localStorage.getItem("taskList")) || [];
-  const taskListElement = document.getElementById("task-list");
-  taskListElement.innerHTML = "";
+  const tableBody = document.querySelector("#task-table tbody");
+  tableBody.innerHTML = ""; // Bersihkan isi tabel sebelum menambahkan data baru
 
   taskList.forEach((task, index) => {
-    const li = document.createElement("li");
-    li.innerHTML = `
-          <div class="task-details">
-              <strong>${task.subject}</strong><br>
-              ${task.task} - ${task.dueDate} - Status: ${
-      task.status === "selesai" ? "Selesai" : "Belum Selesai"
-    }
-          </div>
-          <button onclick="deleteTask(${index})">Hapus</button>
-      `;
-    taskListElement.appendChild(li);
+    const row = document.createElement("tr");
+
+    row.innerHTML = `
+      <td>${index + 1}</td>
+      <td>${task.subject}</td>
+      <td>${task.task}</td>
+      <td>${task.dueDate}</td>
+      <td>${task.status === "selesai" ? "Selesai" : "Belum Selesai"}</td>
+      <td>
+        <button onclick="deleteTask(${index})" style="background-color: red; color: white;">Hapus</button>
+      </td>
+    `;
+
+    tableBody.appendChild(row);
   });
 }
 
@@ -53,3 +56,17 @@ function deleteTask(index) {
 
 // Memanggil fungsi untuk menampilkan tugas saat halaman dimuat
 displayTasks();
+
+function displayPlaceholder() {
+  const taskTableBody = document.querySelector("#task-table tbody");
+  if (taskTableBody.innerHTML.trim() === "") {
+    taskTableBody.innerHTML = `
+      <tr>
+        <td colspan="6" style="text-align: center;">Belum ada tugas</td>
+      </tr>
+    `;
+  }
+}
+
+displayTasks(); // Fungsi utama
+displayPlaceholder(); // Tambahkan ini setelah displayTasks()
